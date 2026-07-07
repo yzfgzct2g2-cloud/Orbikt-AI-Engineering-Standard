@@ -6,7 +6,7 @@
 | Title | North Star |
 | Layer | 01-meta |
 | Type | Vision |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -69,6 +69,23 @@ model generation:
    (evolution, governance layers).
 6. **Beginning management** — no work starts before it is understood: goals aligned,
    questions asked, risks and constraints surfaced (discovery layer).
+
+## What will OAES always protect?
+
+Whatever else changes, the standard protects six things, and each protection has teeth —
+a citable requirement, not a sentiment:
+
+1. **The human who is accountable** — from being blamed for automation they could not
+   inspect (authority boundaries, checkpoint catalog).
+2. **The engineer who inherits the work** — from unexplained rules and unrecorded
+   reasoning (decision records, the journal, this document).
+3. **The truth** — from duplication, staleness, and confident fabrication (single
+   sourcing, provenance, lifecycle states).
+4. **The record** — from silent rewriting (append-only history, integrity duties).
+5. **The person in the data** — from convenience (privacy classification, minimization,
+   the one lawful exception to append-only).
+6. **The standard itself** — from capture by any vendor, model, domain, or fashion
+   (neutrality, adapters, governed change).
 
 ## What should OAES never become?
 
@@ -170,3 +187,4 @@ by a specific, citable requirement, which is what makes them values rather than 
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.1. |
+| 1.1.0 | 2026-07-08 | OAES Standards Committee | Added "What will OAES always protect?"; all other answers reaffirmed at the edition 1.2 review (OAES-DEC-010). |

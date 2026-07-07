@@ -6,7 +6,7 @@
 | Title | Naming Specification |
 | Layer | 01-meta |
 | Type | Specification |
-| Version | 1.1.0 |
+| Version | 1.2.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -95,9 +95,27 @@ standard.
   Standard"; documents MUST be cited by identifier, title, or relative link — never by
   bare path fragments that would break on relocation.
 
+### Reserved registry identifiers
+
+- **NAM-13** Registry documents carry reserved word-form identifiers of the form
+  `OAES-<NAME>` instead of the NAM-01 grammar, because registries are singletons whose
+  names are their identity. The reserved identifiers are:
+
+  | Identifier | Registry |
+  | --- | --- |
+  | OAES-README | Repository overview |
+  | OAES-INDEX | Document index |
+  | OAES-CONTRIBUTING | Contribution standard |
+  | OAES-CHANGELOG | Edition history |
+  | OAES-ROLE-REGISTER | Governance role register (GOV-03) |
+  | OAES-IMPROVEMENT-BACKLOG | Improvement backlog (IMP-01) |
+
+  New reserved identifiers are added to this table by minor change; nothing else may use
+  the word form.
+
 ## Validation
 
-- Rules NAM-01 through NAM-12 are deterministically checkable and are enforced by
+- Rules NAM-01 through NAM-13 are deterministically checkable and are enforced by
   [Repository Structure Rules](../63-validators/repository-structure-rules.md) and
   [Document Conformance Rules](../63-validators/document-conformance-rules.md).
 
@@ -118,3 +136,4 @@ standard.
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
 | 1.1.0 | 2026-07-07 | OAES Standards Committee | Registered VISION type code (NAM-05) for the North Star (OAES-DEC-007). |
+| 1.2.0 | 2026-07-08 | OAES Standards Committee | Added NAM-13 reserved registry identifiers, legalizing existing registry identity (OAES-DEC-010). |

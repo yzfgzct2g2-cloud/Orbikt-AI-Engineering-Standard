@@ -7,7 +7,7 @@
 | Layer | 60-templates |
 | Type | Template |
 | Implements | OAES-SPEC-023 (Discovery Specification) |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-08 |
@@ -71,6 +71,7 @@ artifact.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-08 | OAES Standards Committee | Initial release, Foundation edition 1.1. |
+| 1.1.0 | 2026-07-08 | OAES Standards Committee | Question block carries the four DSC-05 fields (OAES-DEC-010). |
 
 ## Skeleton
 
@@ -103,9 +104,14 @@ artifact.
 
 ## 4. Clarification Questions (5–10 material, or confidence declaration)
 
-| # | Question | Unblocks (charter field / constraint / risk) | Asked of | Answer (message id) |
-| --- | --- | --- | --- | --- |
-| 1 | {{question}} | {{what-it-unblocks}} | {{role}} | {{answer-ref}} |
+### Q{{n}}: {{question}}
+
+- Why it exists (uncertainty removed): {{what-is-currently-unknown-and-why-that-matters}}
+- Decision that depends on it: {{charter-field-constraint-risk-or-success-criterion}}
+- Risk if unanswered: {{what-is-assumed-and-what-that-assumption-can-cost}}
+- Asked of / answer: {{role}} / {{answer-message-id-or-open}}
+
+*(repeat per question; DSC-05 requires all four fields on every question)*
 
 - Confidence declaration (only if waiving the minimum): {{derivation-statement}} —
   countersigned by {{approver}} (DSC-06)

@@ -6,7 +6,7 @@
 | Title | Document Conformance Rules |
 | Layer | 63-validators |
 | Type | Validation Rule Set |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -46,7 +46,7 @@ file and location.
 | VDOC-01 | The file begins with exactly one level-1 heading. | DOCU-03 |
 | VDOC-02 | A header table follows the title and contains the fields Identifier, Title, Type, Version, Status, Author, Approved. | DOCU-03 |
 | VDOC-03 | The header table contains a Layer field, or the file is a repository-root registry (README.md, INDEX.md, CONTRIBUTING.md, CHANGELOG.md). | DOCU-03 |
-| VDOC-04 | The Identifier value matches `OAES-<TYPE>-<NNN>` with a type code registered in NAM-05, or is a project-local identifier outside this repository. | NAM-01, NAM-05 |
+| VDOC-04 | The Identifier value matches `OAES-<TYPE>-<NNN>` with a type code registered in NAM-05, or is a reserved registry identifier registered in NAM-13, or is a project-local identifier outside this repository. | NAM-01, NAM-05, NAM-13 |
 | VDOC-05 | The Type value is a class listed in DOCU-01. | DOCU-01 |
 | VDOC-06 | The Version value matches `MAJOR.MINOR.PATCH` with numeric components. | VER-01 |
 | VDOC-07 | The Status value is one of Draft, Review, Active, Deprecated, Archived. | VER-09 |
@@ -80,3 +80,4 @@ file and location.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-08 | OAES Standards Committee | VDOC-04 recognizes NAM-13 reserved registry identifiers (motivated by NAM 1.2.0). |

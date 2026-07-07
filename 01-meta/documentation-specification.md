@@ -6,7 +6,7 @@
 | Title | Documentation Specification |
 | Layer | 01-meta |
 | Type | Specification |
-| Version | 1.1.0 |
+| Version | 1.2.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -67,7 +67,11 @@ without any automated assistance.
 - **DOCU-06** Layer Definitions MUST additionally contain **Responsibilities** and
   **Contents**; Specifications MUST additionally contain **Requirements** and
   **Validation**; Templates MUST follow the section set of the
-  [Template Specification](../60-templates/template-specification.md).
+  [Template Specification](../60-templates/template-specification.md). Specifications
+  that define recurring processes SHOULD additionally contain **Extension Points**,
+  **Metrics**, and **Failure Modes and Recovery** — required practice for new process
+  specifications; the pre-1.2 normative-core and rule specifications are exempt by
+  recorded decision (OAES-DEC-010) and adopt these sections at their next revision.
 - **DOCU-07** The Dependencies section lists only documents this document normatively
   depends on; "None" is stated explicitly when empty.
 - **DOCU-08** The Interfaces section MUST distinguish **Inbound** (who consumes this
@@ -119,3 +123,4 @@ without any automated assistance.
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
 | 1.1.0 | 2026-07-07 | OAES Standards Committee | Added Vision document class (DOCU-01) for the North Star (OAES-DEC-007). |
+| 1.2.0 | 2026-07-08 | OAES Standards Committee | Extended section set for process specifications in DOCU-06 (OAES-DEC-010). |

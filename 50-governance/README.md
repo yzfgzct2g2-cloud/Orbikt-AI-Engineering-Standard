@@ -5,7 +5,7 @@
 | Identifier | OAES-LAYER-50 |
 | Title | Governance Layer |
 | Type | Layer Definition |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -51,6 +51,7 @@ traceable.
 | --- | --- |
 | [governance-specification.md](governance-specification.md) | OAES-SPEC-016 |
 | [decision-specification.md](decision-specification.md) | OAES-SPEC-017 |
+| [role-register.md](role-register.md) | OAES-ROLE-REGISTER |
 | [decisions/](decisions/) | OAES-DEC-001 … |
 
 ## Future Extension
@@ -68,3 +69,4 @@ traceable.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-08 | OAES Standards Committee | Added the role register (OAES-ROLE-REGISTER). |

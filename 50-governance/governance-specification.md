@@ -6,7 +6,7 @@
 | Title | Governance Specification |
 | Layer | 50-governance |
 | Type | Specification |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -85,6 +85,16 @@ when the standard is ten years old and none of its founders are present.
   itself. An expired waiver reverts automatically; continuing the deviation is then a
   blocking defect.
 
+### Bootstrap
+
+- **GOV-09** Until the Standards Committee reaches the GOV-01 minimum of three humans, a
+  governance scope operates in *bootstrap mode*: a founding Maintainer MAY hold all
+  roles, and every author-reviewer conflict is recorded per ORG-05's escape clause.
+  Bootstrap mode MUST be declared in the role register, caps conformance claims at
+  Level 2 (QUA-02 — Level 3 requires independence that bootstrap cannot provide), and
+  keeps committee formation as a standing improvement item (IMP-01) until exited.
+  Bootstrap is an honest starting state, never a destination.
+
 ## Validation
 
 - Decision records and waivers are structurally checkable against their templates; GOV-02
@@ -106,3 +116,4 @@ when the standard is ten years old and none of its founders are present.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-08 | OAES Standards Committee | Added GOV-09 bootstrap mode, resolving the governance-bootstrap risk (OAES-DEC-010). |

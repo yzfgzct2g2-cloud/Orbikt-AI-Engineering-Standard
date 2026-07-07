@@ -6,7 +6,7 @@
 | Title | Architecture Decision Journal |
 | Layer | 02-architecture |
 | Type | Reference |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -134,6 +134,27 @@ cheap to maintain because there is somewhere legitimate to put everything else.
   (the core has a gap); accelerating growth of the core itself (the North Star's warning
   sign).
 
+## Edition 1.2 — the definitive-edition pass
+
+The final frontier-model pass was run as a rejection exercise: assume the standard is
+wrong, and try to prove it. The architecture survived; the *instances* did not — the
+standard was violating its own registers, grammar, and glossary discipline
+([OAES-DEC-010](../50-governance/decisions/dec-010-definitive-edition-hardening.md)
+lists every finding and disposition). The most instructive finding was the oldest:
+`OAES-README` had been illegal under NAM-01 since the hour both were written, and three
+audits missed it because the audit tooling was written by the same mind that wrote the
+rule. That is the case for independent review (ASR-03) stated as autobiography.
+
+Risks resolved this edition: governance bootstrap (GOV-09 gives the one-person state a
+lawful, honest, capped form). Risks now carried openly in the
+[improvement backlog](../51-evolution/improvement-backlog.md) rather than in this
+narrative: field-untestedness (IMP-B-006 — the dominant remaining risk; no review
+substitutes for a real adopter cycle), licensing (IMP-B-002, a reserved human decision),
+and the deferred items IMP-B-001/004/005. The 2036 review found nothing to redesign: no
+requirement names or presumes any current technology, every process is executable by
+hand, and the extension points (bands, tables, type codes, adapters) are where a 2036
+maintainer would need them to be.
+
 ## Future Extension
 
 - One narrative section per wave of structural change, appended with each edition that
@@ -150,3 +171,4 @@ cheap to maintain because there is somewhere legitimate to put everything else.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.1. |
+| 1.1.0 | 2026-07-08 | OAES Standards Committee | Added the edition 1.2 narrative; risk list moved to the improvement backlog. |

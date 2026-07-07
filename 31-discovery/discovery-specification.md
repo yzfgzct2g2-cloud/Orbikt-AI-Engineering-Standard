@@ -6,7 +6,7 @@
 | Title | Discovery Specification |
 | Layer | 31-discovery |
 | Type | Specification |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -83,9 +83,12 @@ thing quickly.
 
 - **DSC-05** Stage 4 MUST produce between five and ten *material* clarification
   questions, unless the confidence rule (DSC-06) applies. A question is material only if
-  its answer changes a charter field, a constraint, a risk, or a success criterion —
-  and each question MUST name which. Padding to reach five is a defect; stopping at ten
-  forces prioritization.
+  its answer changes a charter field, a constraint, a risk, or a success criterion.
+  Every question MUST state, explicitly: (a) why it exists — the uncertainty it removes;
+  (b) the decision or charter element that depends on the answer; and (c) the risk that
+  remains if it goes unanswered — which, if material, enters the risk register (DSC-10)
+  as an accepted assumption's risk. A question missing any of these is padding, and
+  padding to reach five is a defect; stopping at ten forces prioritization.
 - **DSC-06** The question minimum is waived only by a recorded *confidence declaration*:
   the discovery lead states that every charter field is derivable from the intake and
   existing knowledge without assumption, and the approval-gate approver countersigns it.
@@ -170,3 +173,4 @@ thing quickly.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.1. |
+| 1.1.0 | 2026-07-08 | OAES Standards Committee | DSC-05 strengthened: every question states its uncertainty, dependent decision, and unanswered risk (OAES-DEC-010). |

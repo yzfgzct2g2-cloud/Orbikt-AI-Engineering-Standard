@@ -5,7 +5,7 @@
 | Identifier | OAES-LAYER-63 |
 | Title | Validators Layer |
 | Type | Layer Definition |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -51,6 +51,7 @@ contract; any implementation that evaluates them exactly is a conforming validat
 | --- | --- |
 | [document-conformance-rules.md](document-conformance-rules.md) | OAES-VAL-001 |
 | [repository-structure-rules.md](repository-structure-rules.md) | OAES-VAL-002 |
+| [record-conformance-rules.md](record-conformance-rules.md) | OAES-VAL-003 |
 
 ## Future Extension
 
@@ -67,3 +68,4 @@ contract; any implementation that evaluates them exactly is a conforming validat
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-08 | OAES Standards Committee | Added the Record Conformance Rules (OAES-VAL-003). |

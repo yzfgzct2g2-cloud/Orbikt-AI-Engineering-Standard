@@ -5,7 +5,7 @@
 | Identifier | OAES-CHANGELOG |
 | Title | Edition History |
 | Type | Registry Document |
-| Version | 1.1.0 |
+| Version | 1.2.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -34,6 +34,30 @@ adopters migrate (VER-06 to VER-08, EVO-07).
 - **Outbound:** the pinned document versions in [INDEX.md](INDEX.md).
 
 ## Editions
+
+### Foundation 1.2 — 2026-07-08
+
+The definitive Foundation + Enterprise edition: the final frontier-model architectural
+pass. No restructuring — an adversarial (red-team) review and a ten-year future review
+confirmed the architecture and found self-conformance defects, all fixed in this edition
+(OAES-DEC-010 records every finding and disposition).
+
+- **Pinned document versions:** as listed per document in [INDEX.md](INDEX.md) at this
+  date.
+- **Added:** Record Conformance Rules (OAES-VAL-003) — deterministic checks for
+  operational records; the standard's own Role Register (OAES-ROLE-REGISTER, in GOV-09
+  bootstrap mode) and Improvement Backlog (OAES-IMPROVEMENT-BACKLOG, with all open items
+  from editions 1.0–1.2); decision record OAES-DEC-010.
+- **Amended (minor):** OAES-SPEC-001 (NAM-13 reserved registry identifiers);
+  OAES-SPEC-003 (extended section set for process specifications); OAES-SPEC-016
+  (GOV-09 bootstrap mode); OAES-SPEC-023 and OAES-TMPL-011 (every discovery question
+  states its uncertainty, dependent decision, and unanswered risk); OAES-VAL-001
+  (VDOC-04 recognizes NAM-13); North Star (added "What will OAES always protect?");
+  Glossary (edition 1.1/1.2 terms); Architecture Decision Journal (edition 1.2
+  narrative); layer READMEs 50, 51, 63.
+- **Migration statements:** none required. Adopters gain the VREC rule set and the
+  strengthened question form; existing discovery records made under 1.1 remain valid as
+  records (IMP-08).
 
 ### Foundation 1.1 — 2026-07-08
 
@@ -89,3 +113,4 @@ The initial release: the complete foundation with no domain content.
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
 | 1.1.0 | 2026-07-08 | OAES Standards Committee | Recorded edition Foundation 1.1. |
+| 1.2.0 | 2026-07-08 | OAES Standards Committee | Recorded edition Foundation 1.2. |
