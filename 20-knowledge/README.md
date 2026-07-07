@@ -5,7 +5,7 @@
 | Identifier | OAES-LAYER-20 |
 | Title | Knowledge Layer |
 | Type | Layer Definition |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -49,6 +49,7 @@ exactly one authoritative home.
 | Document | Identifier |
 | --- | --- |
 | [knowledge-specification.md](knowledge-specification.md) | OAES-SPEC-008 |
+| [knowledge-lifecycle-specification.md](knowledge-lifecycle-specification.md) | OAES-SPEC-026 |
 
 ## Future Extension
 
@@ -65,3 +66,4 @@ exactly one authoritative home.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-07 | OAES Standards Committee | Added the Knowledge Lifecycle Specification (OAES-SPEC-026). |

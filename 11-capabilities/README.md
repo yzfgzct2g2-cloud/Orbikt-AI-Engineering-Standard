@@ -5,7 +5,7 @@
 | Identifier | OAES-LAYER-11 |
 | Title | Capabilities Layer |
 | Type | Layer Definition |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -48,6 +48,7 @@ satisfy before it may participate in OAES-governed work.
 | Document | Identifier |
 | --- | --- |
 | [agent-specification.md](agent-specification.md) | OAES-SPEC-006 |
+| [capability-model-specification.md](capability-model-specification.md) | OAES-SPEC-024 |
 
 ## Future Extension
 
@@ -64,3 +65,4 @@ satisfy before it may participate in OAES-governed work.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-07 | OAES Standards Committee | Added the Capability Model Specification (OAES-SPEC-024). |

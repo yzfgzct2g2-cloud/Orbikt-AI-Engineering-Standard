@@ -5,7 +5,7 @@
 | Identifier | OAES-LAYER-30 |
 | Title | Projects Layer |
 | Type | Layer Definition |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -47,6 +47,7 @@ artifacts it must maintain, and how it states its conformance.
 | Document | Identifier |
 | --- | --- |
 | [project-specification.md](project-specification.md) | OAES-SPEC-011 |
+| [project-lifecycle-specification.md](project-lifecycle-specification.md) | OAES-SPEC-031 |
 
 ## Future Extension
 
@@ -63,3 +64,4 @@ artifacts it must maintain, and how it states its conformance.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-07 | OAES Standards Committee | Added the Project Lifecycle Specification (OAES-SPEC-031). |

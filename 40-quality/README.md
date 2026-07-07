@@ -5,7 +5,7 @@
 | Identifier | OAES-LAYER-40 |
 | Title | Quality Layer |
 | Type | Layer Definition |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -50,6 +50,7 @@ conformance levels a project can achieve against the standard.
 | Document | Identifier |
 | --- | --- |
 | [quality-specification.md](quality-specification.md) | OAES-SPEC-012 |
+| [assurance-loops-specification.md](assurance-loops-specification.md) | OAES-SPEC-029 |
 
 ## Future Extension
 
@@ -66,3 +67,4 @@ conformance levels a project can achieve against the standard.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-07 | OAES Standards Committee | Added the Assurance Loops Specification (OAES-SPEC-029). |

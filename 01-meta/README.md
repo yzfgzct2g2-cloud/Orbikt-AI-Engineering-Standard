@@ -5,19 +5,21 @@
 | Identifier | OAES-LAYER-01 |
 | Title | Meta Layer |
 | Type | Layer Definition |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
 
 ## Purpose
 
-Define the rules that govern OAES documents themselves: how artifacts are named and
-identified, how they are versioned, and how they are structured and written. Every document
-in every layer must conform to this layer.
+Hold the standard's self-description: the enduring vision (North Star) and the rules that
+govern OAES documents themselves — how artifacts are named and identified, how they are
+versioned, and how they are structured and written. Every document in every layer must
+conform to this layer's rules.
 
 ## Scope
 
+- The North Star vision of the standard.
 - Identity, naming, versioning, lifecycle status, and structural/editorial rules for all
   OAES artifacts.
 
@@ -46,6 +48,7 @@ in every layer must conform to this layer.
 
 | Document | Identifier |
 | --- | --- |
+| [north-star.md](north-star.md) | OAES-VISION-001 |
 | [naming-specification.md](naming-specification.md) | OAES-SPEC-001 |
 | [versioning-specification.md](versioning-specification.md) | OAES-SPEC-002 |
 | [documentation-specification.md](documentation-specification.md) | OAES-SPEC-003 |
@@ -65,3 +68,4 @@ in every layer must conform to this layer.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-07 | OAES Standards Committee | Added North Star (OAES-VISION-001); widened purpose to the standard's self-description (OAES-DEC-007). |

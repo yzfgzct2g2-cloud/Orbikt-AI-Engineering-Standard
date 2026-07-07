@@ -6,7 +6,7 @@
 | Title | Architecture Specification |
 | Layer | 02-architecture |
 | Type | Specification |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -46,15 +46,18 @@ for a decade without accumulating cycles or ambiguity about where a concern belo
 | Band | Nr | Layer | Responsibility (one sentence) |
 | --- | --- | --- | --- |
 | 0x Normative Core | 00 | constitution | Supreme principles and precedence. |
-| | 01 | meta | Rules for documents: naming, versioning, structure. |
+| | 01 | meta | The standard's self-description: North Star vision and rules for documents. |
 | | 02 | architecture | Rules for structure: layers, bands, dependencies. |
 | 1x Operating Model | 10 | organization | Roles, responsibilities, and accountability of participants. |
 | | 11 | capabilities | Requirements on agents — any bounded executor, human-operated or automated. |
 | | 12 | workflow | How work moves through stages, gates, and checkpoints. |
+| | 13 | enterprise | How an organization of many projects operates: tiers, ownership, communication. |
 | 2x Information | 20 | knowledge | Curated, authoritative truth (the SSOT store). |
 | | 21 | memory | Recorded events and state; raw material that may become knowledge. |
 | | 22 | context | Minimal working sets assembled for a specific task. |
 | 3x Delivery | 30 | projects | How adopting projects apply and declare conformance to the standard. |
+| | 31 | discovery | How projects begin: classification, goals, questions, risks, constraints, approval. |
+| | 32 | adapters | How domain content binds to the standard without ever entering it. |
 | 4x Assurance | 40 | quality | Verification, review, evidence, and defect handling. |
 | | 41 | performance | How performance requirements are specified and measured. |
 | | 42 | privacy | Data classification, minimization, and personal-data handling. |
@@ -87,9 +90,10 @@ may depend on them normatively.
    +--------┴---+  +-----┴------+  +--┴───-----+  +┴---------+  +┴----------+
    | 1x OPERATE |  | 2x INFORM  |  | 3x DELIVER|  | 4x ASSURE|  | 5x STEWARD|
    | 10 org     |  | 20 know    |  | 30 proj   |  | 40 qual  |  | 50 gov    |
-   | 11 capab   |  | 21 memory  |  |           |  | 41 perf  |  | 51 evol   |
-   | 12 workflow|  | 22 context |  |           |  | 42 priv  |  |           |
-   +------------+  +------------+  +-----------+  | 43 sec   |  +-----------+
+   | 11 capab   |  | 21 memory  |  | 31 disc   |  | 41 perf  |  | 51 evol   |
+   | 12 workflow|  | 22 context |  | 32 adapt  |  | 42 priv  |  |           |
+   | 13 enterpr |  +------------+  +-----------+  | 43 sec   |  +-----------+
+   +------------+                                 +----------+
         ▲               ▲               ▲         +----------+       ▲
         └───────────────┴───────┬───────┴──────────────┴─────────────┘
                                 │ (implement / describe, non-normative)
@@ -164,3 +168,4 @@ may depend on them normatively.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-07 | OAES Standards Committee | Registered layers 13-enterprise, 31-discovery, 32-adapters per ARCH-10 (OAES-DEC-006). |

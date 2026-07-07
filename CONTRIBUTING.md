@@ -5,7 +5,7 @@
 | Identifier | OAES-CONTRIBUTING |
 | Title | Contribution Standard |
 | Type | Registry Document |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -47,7 +47,10 @@ where they diverge, the specification prevails.
 ## The path of a change (EVO-02)
 
 1. **Propose.** Fill the [Change Request Template](60-templates/tmpl-009-change-request.md):
-   problem, exact change, class, every affected document, migration statement.
+   problem, exact change, class, every affected document, migration statement. Major and
+   structural changes additionally pass the RFC phase — published proposal, comment
+   window, architecture review against the Constitution and
+   [North Star](01-meta/north-star.md) (IMP-03, IMP-04).
 2. **Validate.** Your proposed state must pass the
    [Document Conformance Rules](63-validators/document-conformance-rules.md) and
    [Repository Structure Rules](63-validators/repository-structure-rules.md). Structural
@@ -86,3 +89,4 @@ where they diverge, the specification prevails.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-08 | OAES Standards Committee | Added the RFC phase to the change path (Foundation edition 1.1). |

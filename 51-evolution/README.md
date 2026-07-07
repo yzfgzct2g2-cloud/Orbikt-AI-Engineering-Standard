@@ -5,7 +5,7 @@
 | Identifier | OAES-LAYER-51 |
 | Title | Evolution Layer |
 | Type | Layer Definition |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -52,6 +52,7 @@ its adopters silently.
 | Document | Identifier |
 | --- | --- |
 | [evolution-specification.md](evolution-specification.md) | OAES-SPEC-018 |
+| [improvement-specification.md](improvement-specification.md) | OAES-SPEC-032 |
 
 ## Future Extension
 
@@ -68,3 +69,4 @@ its adopters silently.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-08 | OAES Standards Committee | Added the Improvement Specification (OAES-SPEC-032). |

@@ -5,7 +5,7 @@
 | Identifier | OAES-LAYER-02 |
 | Title | Architecture Layer |
 | Type | Layer Definition |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -47,6 +47,7 @@ answers "where does a concern live, and what may it depend on?"
 | Document | Identifier |
 | --- | --- |
 | [architecture-specification.md](architecture-specification.md) | OAES-SPEC-004 |
+| [architecture-decision-journal.md](architecture-decision-journal.md) | OAES-REF-003 |
 
 ## Future Extension
 
@@ -63,3 +64,4 @@ answers "where does a concern live, and what may it depend on?"
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-07 | OAES Standards Committee | Added the Architecture Decision Journal (OAES-REF-003). |

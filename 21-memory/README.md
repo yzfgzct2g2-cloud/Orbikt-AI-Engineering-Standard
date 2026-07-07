@@ -5,7 +5,7 @@
 | Identifier | OAES-LAYER-21 |
 | Title | Memory Layer |
 | Type | Layer Definition |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -49,6 +49,7 @@ knowledge is later distilled.
 | Document | Identifier |
 | --- | --- |
 | [memory-specification.md](memory-specification.md) | OAES-SPEC-009 |
+| [memory-lifecycle-specification.md](memory-lifecycle-specification.md) | OAES-SPEC-027 |
 
 ## Future Extension
 
@@ -65,3 +66,4 @@ knowledge is later distilled.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-07 | OAES Standards Committee | Added the Memory Lifecycle Specification (OAES-SPEC-027). |

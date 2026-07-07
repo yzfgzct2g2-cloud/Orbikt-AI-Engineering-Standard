@@ -5,7 +5,7 @@
 | Identifier | OAES-LAYER-22 |
 | Title | Context Layer |
 | Type | Layer Definition |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -51,6 +51,7 @@ and why.
 | Document | Identifier |
 | --- | --- |
 | [context-specification.md](context-specification.md) | OAES-SPEC-010 |
+| [context-pipeline-specification.md](context-pipeline-specification.md) | OAES-SPEC-025 |
 
 ## Future Extension
 
@@ -67,3 +68,4 @@ and why.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-07 | OAES Standards Committee | Added the Context Pipeline Specification (OAES-SPEC-025). |

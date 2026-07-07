@@ -5,7 +5,7 @@
 | Identifier | OAES-README |
 | Title | Repository Overview |
 | Type | Registry Document |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -39,7 +39,8 @@ least ten years.
 ## How to Read This Repository
 
 1. Start with the [Constitution](00-constitution/constitution.md) — the supreme document.
-   Everything else derives its authority from it.
+   Everything else derives its authority from it. Its companion in intent is the
+   [North Star](01-meta/north-star.md) — the test every future idea must pass.
 2. Read the [Architecture Specification](02-architecture/architecture-specification.md) —
    it explains the layer model and the dependency rules between layers.
 3. Use the [Document Index](INDEX.md) — the complete registry of every document, its
@@ -52,9 +53,9 @@ least ten years.
 | Band | Layers | Concern |
 | --- | --- | --- |
 | 0x — Normative Core | [00-constitution](00-constitution/README.md), [01-meta](01-meta/README.md), [02-architecture](02-architecture/README.md) | Supreme principles; rules for documents; rules for structure |
-| 1x — Operating Model | [10-organization](10-organization/README.md), [11-capabilities](11-capabilities/README.md), [12-workflow](12-workflow/README.md) | Who works, what can act, how work flows |
+| 1x — Operating Model | [10-organization](10-organization/README.md), [11-capabilities](11-capabilities/README.md), [12-workflow](12-workflow/README.md), [13-enterprise](13-enterprise/README.md) | Who works, what can act, how work flows, how the whole organization operates |
 | 2x — Information | [20-knowledge](20-knowledge/README.md), [21-memory](21-memory/README.md), [22-context](22-context/README.md) | Curated truth; recorded state; assembled working sets |
-| 3x — Delivery | [30-projects](30-projects/README.md) | How the standard is applied to real projects |
+| 3x — Delivery | [30-projects](30-projects/README.md), [31-discovery](31-discovery/README.md), [32-adapters](32-adapters/README.md) | How projects begin, run, and bind to their domains |
 | 4x — Assurance | [40-quality](40-quality/README.md), [41-performance](41-performance/README.md), [42-privacy](42-privacy/README.md), [43-security](43-security/README.md) | Verification of work and protection of people and systems |
 | 5x — Stewardship | [50-governance](50-governance/README.md), [51-evolution](51-evolution/README.md) | Decision authority; controlled change of the standard |
 | 6x — Enablement | [60-templates](60-templates/README.md), [61-examples](61-examples/README.md), [62-generators](62-generators/README.md), [63-validators](63-validators/README.md), [64-tools](64-tools/README.md) | Reusable implementations of the normative layers |
@@ -86,3 +87,4 @@ least ten years.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-08 | OAES Standards Committee | Added layers 13, 31, 32 and the North Star to the maps (Foundation edition 1.1). |

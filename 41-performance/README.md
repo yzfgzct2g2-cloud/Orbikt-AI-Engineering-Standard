@@ -5,7 +5,7 @@
 | Identifier | OAES-LAYER-41 |
 | Title | Performance Layer |
 | Type | Layer Definition |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -49,6 +49,7 @@ any particular metric, technology, or domain target.
 | Document | Identifier |
 | --- | --- |
 | [performance-specification.md](performance-specification.md) | OAES-SPEC-013 |
+| [metrics-specification.md](metrics-specification.md) | OAES-SPEC-028 |
 
 ## Future Extension
 
@@ -65,3 +66,4 @@ any particular metric, technology, or domain target.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-08 | OAES Standards Committee | Added the Metrics Specification (OAES-SPEC-028). |

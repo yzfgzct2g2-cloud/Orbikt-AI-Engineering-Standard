@@ -5,7 +5,7 @@
 | Identifier | OAES-LAYER-60 |
 | Title | Templates Layer |
 | Type | Layer Definition |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -53,6 +53,10 @@ start every artifact structurally correct instead of reconstructing the rules by
 | [tmpl-008-project-charter.md](tmpl-008-project-charter.md) | OAES-TMPL-008 | OAES-SPEC-011 |
 | [tmpl-009-change-request.md](tmpl-009-change-request.md) | OAES-TMPL-009 | OAES-SPEC-018 |
 | [tmpl-010-review-record.md](tmpl-010-review-record.md) | OAES-TMPL-010 | OAES-SPEC-012 |
+| [tmpl-011-discovery-record.md](tmpl-011-discovery-record.md) | OAES-TMPL-011 | OAES-SPEC-023 |
+| [tmpl-012-risk-record.md](tmpl-012-risk-record.md) | OAES-TMPL-012 | OAES-SPEC-023 |
+| [tmpl-013-metric-definition.md](tmpl-013-metric-definition.md) | OAES-TMPL-013 | OAES-SPEC-028 |
+| [tmpl-014-message.md](tmpl-014-message.md) | OAES-TMPL-014 | OAES-SPEC-022 |
 
 ## Future Extension
 
@@ -69,3 +73,4 @@ start every artifact structurally correct instead of reconstructing the rules by
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-08 | OAES Standards Committee | Added templates OAES-TMPL-011 to OAES-TMPL-014. |

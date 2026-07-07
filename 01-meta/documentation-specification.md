@@ -6,7 +6,7 @@
 | Title | Documentation Specification |
 | Layer | 01-meta |
 | Type | Specification |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -45,8 +45,9 @@ without any automated assistance.
 ### Document classes
 
 - **DOCU-01** Every document MUST declare exactly one type in its header:
-  *Constitution*, *Layer Definition*, *Specification*, *Template*, *Decision Record*,
-  *Validation Rule Set*, *Example*, *Guide*, *Reference*, or *Registry Document*.
+  *Constitution*, *Vision*, *Layer Definition*, *Specification*, *Template*,
+  *Decision Record*, *Validation Rule Set*, *Example*, *Guide*, *Reference*, or
+  *Registry Document*.
 - **DOCU-02** Only the Constitution, Specifications, and Validation Rule Sets may contain
   normative requirements. All other classes are informative.
 
@@ -117,3 +118,4 @@ without any automated assistance.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-07 | OAES Standards Committee | Added Vision document class (DOCU-01) for the North Star (OAES-DEC-007). |

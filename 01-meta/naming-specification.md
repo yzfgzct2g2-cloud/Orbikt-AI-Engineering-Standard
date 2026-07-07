@@ -6,7 +6,7 @@
 | Title | Naming Specification |
 | Layer | 01-meta |
 | Type | Specification |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -63,6 +63,7 @@ standard.
   | `EXA` | Example | OAES-EXA-001 |
   | `GUIDE` | Guide | OAES-GUIDE-001 |
   | `REF` | Reference document | OAES-REF-001 |
+  | `VISION` | Vision document | OAES-VISION-001 |
 
   New type codes are added to this table through a minor change to this specification.
 
@@ -116,3 +117,4 @@ standard.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-07 | OAES Standards Committee | Registered VISION type code (NAM-05) for the North Star (OAES-DEC-007). |

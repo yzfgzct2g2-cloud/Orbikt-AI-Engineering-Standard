@@ -6,7 +6,7 @@
 | Title | Reading Guide |
 | Layer | 70-documentation |
 | Type | Guide |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -44,15 +44,23 @@ convenient; the **archive** makes it permanent.
 
 ## Reading paths
 
-**Everyone (about 30 minutes):**
+**Everyone (about 40 minutes):**
 [Constitution](../00-constitution/constitution.md) →
+[North Star](../01-meta/north-star.md) →
 [Architecture Specification](../02-architecture/architecture-specification.md) →
 [Glossary](../71-reference/glossary.md).
 
 **Evaluating adoption:** the path above, then the
 [Project Specification](../30-projects/project-specification.md), the
-[Quality Specification](../40-quality/quality-specification.md) (conformance levels), and
-the [Adoption Guide](adoption-guide.md).
+[Discovery Specification](../31-discovery/discovery-specification.md) (how projects
+begin), the [Quality Specification](../40-quality/quality-specification.md) (conformance
+levels), and the [Adoption Guide](adoption-guide.md).
+
+**Operating at enterprise scale:** the
+[Enterprise Specification](../13-enterprise/enterprise-specification.md) (tiers and
+ownership), the
+[Communication Specification](../13-enterprise/communication-specification.md), and the
+[Domain Adapter Specification](../32-adapters/domain-adapter-specification.md).
 
 **Working under the standard daily:** the operating model
 ([Organization](../10-organization/organization-specification.md),
@@ -98,3 +106,4 @@ the [validation rule sets](../63-validators/README.md), and the assurance band
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-07-08 | OAES Standards Committee | Added North Star, discovery, and enterprise reading paths (Foundation edition 1.1). |
