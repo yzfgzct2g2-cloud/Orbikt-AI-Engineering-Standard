@@ -1,0 +1,22 @@
+{
+  "name": "oaes-reference-runtime",
+  "version": "2.0.0",
+  "private": true,
+  "description": "OAES v2 deterministic reference runtime (spec: ../spec/RUNTIME.md)",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "test": "npm run build && node --test \"dist/tests/*.test.js\"",
+    "demo": "npm run build && node dist/src/demo.js",
+    "check:docs": "node scripts/check-docs.mjs",
+    "check:all": "npm run typecheck && npm test && npm run check:docs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.5.4"
+  }
+}

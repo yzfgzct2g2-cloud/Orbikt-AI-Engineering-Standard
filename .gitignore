@@ -1,0 +1,14 @@
+# Dependencies and build output
+node_modules/
+reference-runtime/dist/
+reference-runtime/.demo/
+
+# Environment and secrets — never commit
+.env
+.env.*
+*.pem
+*.key
+
+# Editor/OS noise
+.DS_Store
+Thumbs.db
