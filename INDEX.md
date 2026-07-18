@@ -5,10 +5,17 @@
 | Identifier | OAES-INDEX |
 | Title | Document Index |
 | Type | Registry Document |
-| Version | 1.2.0 |
+| Version | 1.2.1 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
+
+> **Historical lineage notice (2026-07-18).** This index registers the OAES v1
+> lineage (Foundation editions 1.0–1.2), which is preserved in place as historical
+> evidence and is no longer current OAES authority. The current authoritative
+> specification is OAES v2 in [spec/](spec/README.md); see
+> [history/README.md](history/README.md) and
+> [OAES-DEC-017](50-governance/decisions/dec-017-v1-lineage-preservation.md).
 
 ## Purpose
 
@@ -208,3 +215,4 @@ not listed here does not exist; an entry here must resolve to an existing file (
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
 | 1.1.0 | 2026-07-08 | OAES Standards Committee | Registered all Foundation 1.1 artifacts (Vision, layers 13/31/32, OAES-SPEC-021…032, OAES-TMPL-011…014, OAES-DEC-006…009, OAES-REF-003) and updated amended document versions. |
 | 1.2.0 | 2026-07-08 | OAES Standards Committee | Registered edition 1.2 artifacts (OAES-VAL-003, OAES-DEC-010, OAES-ROLE-REGISTER, OAES-IMPROVEMENT-BACKLOG) and updated amended document versions. |
+| 1.2.1 | 2026-07-18 | OAES Standards Committee | Added the historical-lineage notice: this registry covers the v1 lineage; current authority is OAES v2 (OAES-DEC-017). No registry entries changed. |

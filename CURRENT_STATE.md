@@ -5,7 +5,7 @@
 | Identifier | OAES-V2-CURRENT-STATE |
 | Title | Current Repository State |
 | Type | Registry Document |
-| Version | 2.0.0 |
+| Version | 2.0.1 |
 | Status | Active |
 | Authority | Current (OAES v2) — human-readable projection of [runtime-state/project.json](runtime-state/project.json) |
 | Author | OAES Standards Committee |
@@ -22,19 +22,19 @@
 | Current Objective | `obj-oaes-v2` — OAES v2 frozen specification, reference runtime, continuation contract |
 | Current verified specification version | OAES v2.0.0 (spec/ frozen; see [VERSION.md](VERSION.md)) |
 | Current branch | `feat/oaes-v2-reference-runtime` |
-| Latest completed checkpoint | Continuation contract implemented (after runtime commit `4e09f23`) |
-| Current selected or pending Action | Finalize release validation (`k-release-validation`): authority updates to README/INDEX/CHANGELOG, full validation run, tag `v2.0.0` |
-| Verification status | Runtime **Verified** (typecheck clean; 47/47 tests; demo passes incl. resumption). Spec and continuation **Implemented**, verification via `npm run check:docs` pending in release validation |
-| Known risks or blockers | None open. Push auth working over HTTPS. Merge of the feature branch into `main` is reserved to the repository owner |
+| Latest completed checkpoint | OAES v2.0.0 release checkpoint: README/INDEX/CHANGELOG authority updates; tag `v2.0.0` on this commit |
+| Current selected or pending Action | `verify k-release-validation`: confirm the pushed tag and branch/remote alignment, then record the evidence (final bookkeeping commit) |
+| Verification status | Spec, runtime, and continuation **Verified** (typecheck clean; 48/48 tests incl. invariants and resumption; demo passes; docs consistency scan passes). Release validation **Implemented**, tag verification pending |
+| Known risks or blockers | None open. Merge of the feature branch into `main` is reserved to the repository owner |
 
 ## Current Knowledge Summary
 
 | Knowledge | State | Meaning |
 | --- | --- | --- |
-| `k-v2-spec` | Implemented | spec/ + OAES-DEC-011..017 written; scan pending |
-| `k-reference-runtime` | Verified | runtime + schemas + 47 tests + demo all pass |
-| `k-continuation-contract` | Implemented | BOOTSTRAP/adapters/handoff/runtime-state written; scan pending |
-| `k-release-validation` | Unknown | blocked until the three above are Verified |
+| `k-v2-spec` | Verified | spec/ + OAES-DEC-011..017; consistency scan passes |
+| `k-reference-runtime` | Verified | runtime + schemas + 48 tests + demo all pass |
+| `k-continuation-contract` | Verified | BOOTSTRAP/adapters/handoff/runtime-state; scan checks pass |
+| `k-release-validation` | Implemented | release commit + tag made; remote verification is the pending step |
 
 ## Exact Next Safe Command
 
@@ -49,3 +49,4 @@ Then follow [HANDOFF.md](HANDOFF.md).
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 2.0.0 | 2026-07-18 | OAES Standards Committee | Initial current-state projection. |
+| 2.0.1 | 2026-07-18 | OAES Standards Committee | Release-checkpoint projection: spec/runtime/continuation Verified; release validation Implemented. |

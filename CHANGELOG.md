@@ -5,7 +5,7 @@
 | Identifier | OAES-CHANGELOG |
 | Title | Edition History |
 | Type | Registry Document |
-| Version | 1.2.0 |
+| Version | 2.0.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -34,6 +34,31 @@ adopters migrate (VER-06 to VER-08, EVO-07).
 - **Outbound:** the pinned document versions in [INDEX.md](INDEX.md).
 
 ## Editions
+
+### OAES 2.0.0 — 2026-07-18
+
+The v2 redefinition: OAES becomes a minimal engineering reasoning model with a frozen
+five-concept Kernel (Objective, Knowledge, State, Action, Actor), four canonical
+Knowledge States (Unknown, Known, Implemented, Verified), a deterministic
+provider-independent reference runtime, and a repository-persisted cross-session
+continuation contract. The complete Foundation 1.0–1.2 lineage is preserved in place
+as historical evidence (OAES-DEC-017); git tag `v2.0.0`.
+
+- **Authoritative documents:** [spec/](spec/README.md) (Kernel, Canonical Data Model,
+  State Model, Runtime, Vocabulary), [schemas/](schemas/), [VERSION.md](VERSION.md),
+  the continuation contract ([BOOTSTRAP.md](BOOTSTRAP.md), [CLAUDE.md](CLAUDE.md),
+  [AGENTS.md](AGENTS.md), [CURRENT_STATE.md](CURRENT_STATE.md),
+  [HANDOFF.md](HANDOFF.md), `runtime-state/project.json`).
+- **Added:** the reference runtime ([reference-runtime/](reference-runtime/README.md))
+  with kernel/state invariant guards, deterministic selection, and an
+  interruption/resumption proof; the synthetic greeting demo
+  ([examples/greeting-demo/](examples/greeting-demo/README.md)); decision records
+  OAES-DEC-011…017; the historical lineage index ([history/README.md](history/README.md)).
+- **Amended:** README (v2 entry point, 2.0.0), INDEX (historical-lineage notice,
+  1.2.1), this changelog (2.0.0).
+- **Migration statements:** none required for the v1 lineage — it is preserved
+  unmodified and remains valid as historical records. Adopters of OAES going forward
+  target the v2 specification.
 
 ### Foundation 1.2 — 2026-07-08
 
@@ -114,3 +139,4 @@ The initial release: the complete foundation with no domain content.
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
 | 1.1.0 | 2026-07-08 | OAES Standards Committee | Recorded edition Foundation 1.1. |
 | 1.2.0 | 2026-07-08 | OAES Standards Committee | Recorded edition Foundation 1.2. |
+| 2.0.0 | 2026-07-18 | OAES Standards Committee | Recorded edition OAES 2.0.0. |

@@ -45,11 +45,11 @@
       "id": "k-v2-spec",
       "type": "architecture",
       "content": "The frozen OAES v2 specification lives in spec/ (KERNEL, CANONICAL_DATA_MODEL, STATE_MODEL, RUNTIME, VOCABULARY) with decision records OAES-DEC-011..017. Verification criteria: the documentation consistency scan (npm run check:docs) passes.",
-      "state": "Implemented",
+      "state": "Verified",
       "parent": null,
       "depends_on": [],
       "source": "50-governance/decisions/dec-011-oaes-v2-frozen-kernel.md",
-      "updated_at": "2026-07-18T13:05:00.000Z",
+      "updated_at": "2026-07-18T14:00:00.000Z",
       "requires_implementation": true
     },
     {
@@ -67,22 +67,22 @@
       "id": "k-continuation-contract",
       "type": "implementation",
       "content": "Cross-session continuation is carried by BOOTSTRAP.md (canonical protocol), CLAUDE.md and AGENTS.md (thin adapters), CURRENT_STATE.md and HANDOFF.md (human-readable projections), and runtime-state/project.json (machine-readable authority). Verification criteria: the consistency scan's adapter and link checks pass.",
-      "state": "Implemented",
+      "state": "Verified",
       "parent": null,
       "depends_on": [],
       "source": "50-governance/decisions/dec-016-repository-persisted-continuation.md",
-      "updated_at": "2026-07-18T13:30:00.000Z",
+      "updated_at": "2026-07-18T14:00:00.000Z",
       "requires_implementation": true
     },
     {
       "id": "k-release-validation",
       "type": "evidence",
       "content": "Final release validation for OAES v2.0.0: full check:all run, README/INDEX/CHANGELOG authority update, security scan, push verification, and the v2.0.0 tag. Verification criteria: all commands pass and the remote tag exists.",
-      "state": "Unknown",
+      "state": "Implemented",
       "parent": null,
       "depends_on": ["k-v2-spec", "k-reference-runtime", "k-continuation-contract"],
       "source": "runtime-state/project.json",
-      "updated_at": "2026-07-18T13:30:00.000Z",
+      "updated_at": "2026-07-18T14:10:00.000Z",
       "requires_implementation": true
     }
   ],
@@ -149,10 +149,46 @@
       "created_at": "2026-07-18T13:30:00.000Z",
       "kind": "implement",
       "resulting_state": "Implemented"
+    },
+    {
+      "id": "a-008",
+      "actor": "actor-claude-code",
+      "target_knowledge": ["k-v2-spec"],
+      "description": "verify k-v2-spec (Implemented -> Verified): documentation consistency scan passed (23 authority docs, 24 required files); commit d85c2f5",
+      "created_at": "2026-07-18T14:00:00.000Z",
+      "kind": "verify",
+      "resulting_state": "Verified"
+    },
+    {
+      "id": "a-009",
+      "actor": "actor-claude-code",
+      "target_knowledge": ["k-continuation-contract"],
+      "description": "verify k-continuation-contract (Implemented -> Verified): adapter, link, and state-file checks of the consistency scan passed; runtime-state/project.json validates against the runtime validator (48/48 tests)",
+      "created_at": "2026-07-18T14:00:00.000Z",
+      "kind": "verify",
+      "resulting_state": "Verified"
+    },
+    {
+      "id": "a-010",
+      "actor": "actor-claude-code",
+      "target_knowledge": ["k-release-validation"],
+      "description": "establish k-release-validation (Unknown -> Known): release checklist fixed — authority updates to README/INDEX/CHANGELOG, full check:all, security scan, release commit, tag v2.0.0, push verification",
+      "created_at": "2026-07-18T14:05:00.000Z",
+      "kind": "establish",
+      "resulting_state": "Known"
+    },
+    {
+      "id": "a-011",
+      "actor": "actor-claude-code",
+      "target_knowledge": ["k-release-validation"],
+      "description": "implement k-release-validation (Known -> Implemented): README presents v2 as current (2.0.0), INDEX carries the historical-lineage notice (1.2.1), CHANGELOG records edition OAES 2.0.0; release commit prepared for tag v2.0.0",
+      "created_at": "2026-07-18T14:10:00.000Z",
+      "kind": "implement",
+      "resulting_state": "Implemented"
     }
   ],
   "checkpoint": {
     "pending_action": null,
-    "updated_at": "2026-07-18T13:30:00.000Z"
+    "updated_at": "2026-07-18T14:10:00.000Z"
   }
 }
