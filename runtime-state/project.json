@@ -78,11 +78,11 @@
       "id": "k-release-validation",
       "type": "evidence",
       "content": "Final release validation for OAES v2.0.0: full check:all run, README/INDEX/CHANGELOG authority update, security scan, push verification, and the v2.0.0 tag. Verification criteria: all commands pass and the remote tag exists.",
-      "state": "Implemented",
+      "state": "Verified",
       "parent": null,
       "depends_on": ["k-v2-spec", "k-reference-runtime", "k-continuation-contract"],
       "source": "runtime-state/project.json",
-      "updated_at": "2026-07-18T14:10:00.000Z",
+      "updated_at": "2026-07-18T14:20:00.000Z",
       "requires_implementation": true
     }
   ],
@@ -185,10 +185,19 @@
       "created_at": "2026-07-18T14:10:00.000Z",
       "kind": "implement",
       "resulting_state": "Implemented"
+    },
+    {
+      "id": "a-012",
+      "actor": "actor-claude-code",
+      "target_knowledge": ["k-release-validation"],
+      "description": "verify k-release-validation (Implemented -> Verified): release commit 1cf51e7 pushed; annotated tag v2.0.0 verified on origin pointing at 1cf51e7; local and remote branch heads aligned; working tree clean; check:all and demo pass",
+      "created_at": "2026-07-18T14:20:00.000Z",
+      "kind": "verify",
+      "resulting_state": "Verified"
     }
   ],
   "checkpoint": {
     "pending_action": null,
-    "updated_at": "2026-07-18T14:10:00.000Z"
+    "updated_at": "2026-07-18T14:20:00.000Z"
   }
 }
