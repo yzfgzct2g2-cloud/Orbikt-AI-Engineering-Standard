@@ -1,0 +1,158 @@
+{
+  "format": "oaes-project",
+  "format_version": "2.0.0",
+  "objective": {
+    "id": "obj-oaes-v2",
+    "title": "OAES v2: frozen specification, reference runtime, and continuation contract",
+    "description": "Evolve this repository into the implementation-ready OAES v2 standard while preserving the complete OAES v1 (Foundation 1.0-1.2) lineage: frozen five-concept Kernel, canonical data model, deterministic reference runtime, persistent machine-readable project state, and cross-session continuation.",
+    "success_criteria": [
+      {
+        "id": "sc-spec",
+        "description": "The frozen OAES v2 specification (spec/) is complete and passes the documentation consistency scan.",
+        "knowledge": "k-v2-spec"
+      },
+      {
+        "id": "sc-runtime",
+        "description": "The deterministic reference runtime passes typecheck, all tests (including kernel/state invariant guards and interruption/resumption), and the synthetic demo.",
+        "knowledge": "k-reference-runtime"
+      },
+      {
+        "id": "sc-continuation",
+        "description": "Any future Actor can continue solely from repository files: BOOTSTRAP.md, adapters, CURRENT_STATE.md, HANDOFF.md, and runtime-state/project.json exist and agree.",
+        "knowledge": "k-continuation-contract"
+      },
+      {
+        "id": "sc-release",
+        "description": "Release validation: all checks pass, README/CHANGELOG present v2 as current with v1 preserved, the branch is pushed and aligned with the remote, and the v2.0.0 tag exists.",
+        "knowledge": "k-release-validation"
+      }
+    ]
+  },
+  "actors": [
+    {
+      "id": "actor-owner",
+      "type": "Human",
+      "name": "Repository owner"
+    },
+    {
+      "id": "actor-claude-code",
+      "type": "AI",
+      "name": "Claude Code implementation session"
+    }
+  ],
+  "knowledge": [
+    {
+      "id": "k-v2-spec",
+      "type": "architecture",
+      "content": "The frozen OAES v2 specification lives in spec/ (KERNEL, CANONICAL_DATA_MODEL, STATE_MODEL, RUNTIME, VOCABULARY) with decision records OAES-DEC-011..017. Verification criteria: the documentation consistency scan (npm run check:docs) passes.",
+      "state": "Implemented",
+      "parent": null,
+      "depends_on": [],
+      "source": "50-governance/decisions/dec-011-oaes-v2-frozen-kernel.md",
+      "updated_at": "2026-07-18T13:05:00.000Z",
+      "requires_implementation": true
+    },
+    {
+      "id": "k-reference-runtime",
+      "type": "implementation",
+      "content": "The deterministic reference runtime lives in reference-runtime/ with schemas in schemas/. Verification criteria: npm run typecheck, npm test (47 tests incl. invariant guards and resumption), and npm run demo all pass.",
+      "state": "Verified",
+      "parent": null,
+      "depends_on": [],
+      "source": "50-governance/decisions/dec-015-deterministic-reference-runtime.md",
+      "updated_at": "2026-07-18T13:20:00.000Z",
+      "requires_implementation": true
+    },
+    {
+      "id": "k-continuation-contract",
+      "type": "implementation",
+      "content": "Cross-session continuation is carried by BOOTSTRAP.md (canonical protocol), CLAUDE.md and AGENTS.md (thin adapters), CURRENT_STATE.md and HANDOFF.md (human-readable projections), and runtime-state/project.json (machine-readable authority). Verification criteria: the consistency scan's adapter and link checks pass.",
+      "state": "Implemented",
+      "parent": null,
+      "depends_on": [],
+      "source": "50-governance/decisions/dec-016-repository-persisted-continuation.md",
+      "updated_at": "2026-07-18T13:30:00.000Z",
+      "requires_implementation": true
+    },
+    {
+      "id": "k-release-validation",
+      "type": "evidence",
+      "content": "Final release validation for OAES v2.0.0: full check:all run, README/INDEX/CHANGELOG authority update, security scan, push verification, and the v2.0.0 tag. Verification criteria: all commands pass and the remote tag exists.",
+      "state": "Unknown",
+      "parent": null,
+      "depends_on": ["k-v2-spec", "k-reference-runtime", "k-continuation-contract"],
+      "source": "runtime-state/project.json",
+      "updated_at": "2026-07-18T13:30:00.000Z",
+      "requires_implementation": true
+    }
+  ],
+  "actions": [
+    {
+      "id": "a-001",
+      "actor": "actor-claude-code",
+      "target_knowledge": ["k-v2-spec"],
+      "description": "establish k-v2-spec (Unknown -> Known): audited the repository and fixed the v2 specification design within the accepted mandate",
+      "created_at": "2026-07-18T12:45:00.000Z",
+      "kind": "establish",
+      "resulting_state": "Known"
+    },
+    {
+      "id": "a-002",
+      "actor": "actor-claude-code",
+      "target_knowledge": ["k-v2-spec"],
+      "description": "implement k-v2-spec (Known -> Implemented): wrote spec/ and decision records OAES-DEC-011..017; commit e1f6936",
+      "created_at": "2026-07-18T12:55:00.000Z",
+      "kind": "implement",
+      "resulting_state": "Implemented"
+    },
+    {
+      "id": "a-003",
+      "actor": "actor-claude-code",
+      "target_knowledge": ["k-reference-runtime"],
+      "description": "establish k-reference-runtime (Unknown -> Known): selected TypeScript/Node per OAES-DEC-015 and designed the module layout",
+      "created_at": "2026-07-18T13:00:00.000Z",
+      "kind": "establish",
+      "resulting_state": "Known"
+    },
+    {
+      "id": "a-004",
+      "actor": "actor-claude-code",
+      "target_knowledge": ["k-reference-runtime"],
+      "description": "implement k-reference-runtime (Known -> Implemented): wrote runtime, schemas, tests, and synthetic demo",
+      "created_at": "2026-07-18T13:10:00.000Z",
+      "kind": "implement",
+      "resulting_state": "Implemented"
+    },
+    {
+      "id": "a-005",
+      "actor": "actor-claude-code",
+      "target_knowledge": ["k-reference-runtime"],
+      "description": "verify k-reference-runtime (Implemented -> Verified): typecheck clean, 47/47 tests pass, demo completes with interruption and resumption; commit 4e09f23",
+      "created_at": "2026-07-18T13:20:00.000Z",
+      "kind": "verify",
+      "resulting_state": "Verified"
+    },
+    {
+      "id": "a-006",
+      "actor": "actor-claude-code",
+      "target_knowledge": ["k-continuation-contract"],
+      "description": "establish k-continuation-contract (Unknown -> Known): fixed the continuation file set per OAES-DEC-016",
+      "created_at": "2026-07-18T13:25:00.000Z",
+      "kind": "establish",
+      "resulting_state": "Known"
+    },
+    {
+      "id": "a-007",
+      "actor": "actor-claude-code",
+      "target_knowledge": ["k-continuation-contract"],
+      "description": "implement k-continuation-contract (Known -> Implemented): wrote BOOTSTRAP.md, CLAUDE.md, AGENTS.md, CURRENT_STATE.md, HANDOFF.md, runtime-state/project.json, and the consistency scan",
+      "created_at": "2026-07-18T13:30:00.000Z",
+      "kind": "implement",
+      "resulting_state": "Implemented"
+    }
+  ],
+  "checkpoint": {
+    "pending_action": null,
+    "updated_at": "2026-07-18T13:30:00.000Z"
+  }
+}

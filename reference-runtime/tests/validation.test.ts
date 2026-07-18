@@ -3,14 +3,22 @@
 import { strict as assert } from "node:assert";
 import { readFileSync } from "node:fs";
 import { test } from "node:test";
+import { join } from "node:path";
 import { validateProject, assertProject, ValidationError } from "../src/validate.js";
-import { SEED_PATH } from "../src/greeting-demo.js";
+import { REPO_ROOT, SEED_PATH } from "../src/greeting-demo.js";
 import { clone, makeKnowledge, makeProject } from "./helpers.js";
 
 const seed = JSON.parse(readFileSync(SEED_PATH, "utf8")) as unknown;
 
 test("the committed demo seed is a valid persisted project", () => {
   assert.deepEqual(validateProject(seed), []);
+});
+
+test("the repository's own runtime-state/project.json is a valid persisted project", () => {
+  const project = JSON.parse(
+    readFileSync(join(REPO_ROOT, "runtime-state", "project.json"), "utf8"),
+  ) as unknown;
+  assert.deepEqual(validateProject(project), []);
 });
 
 test("a minimal synthetic project is valid", () => {
