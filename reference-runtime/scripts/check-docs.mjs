@@ -84,7 +84,8 @@ function authorityDocs() {
 }
 
 const errors = [];
-const read = (rel) => readFileSync(join(ROOT, rel), "utf8");
+// Normalize CRLF so the scan is line-ending agnostic across checkouts.
+const read = (rel) => readFileSync(join(ROOT, rel), "utf8").replace(/\r\n/g, "\n");
 
 // 1. Required files
 for (const rel of REQUIRED_FILES) {

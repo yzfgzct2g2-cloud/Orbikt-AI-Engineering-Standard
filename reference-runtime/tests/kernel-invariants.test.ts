@@ -76,18 +76,22 @@ test("schemas carry the canonical minimum fields of the data model", () => {
   assert.deepEqual(required("actor.schema.json"), ["id", "type", "name"]);
 });
 
+// Checkouts may materialize docs with CRLF (e.g. Windows autocrlf); the guard
+// is about content, not line-ending bytes.
+function readNormalized(...segments: string[]): string {
+  return readFileSync(join(REPO_ROOT, ...segments), "utf8").replace(/\r\n/g, "\n");
+}
+
 test("spec/KERNEL.md declares exactly the five concepts in its kernel block", () => {
-  const kernel = readFileSync(join(REPO_ROOT, "spec", "KERNEL.md"), "utf8");
   assert.ok(
-    kernel.includes("Objective\nKnowledge\nState\nAction\nActor"),
+    readNormalized("spec", "KERNEL.md").includes("Objective\nKnowledge\nState\nAction\nActor"),
     "KERNEL.md must contain the canonical five-concept block",
   );
 });
 
 test("spec/STATE_MODEL.md declares exactly the four states in its state block", () => {
-  const stateModel = readFileSync(join(REPO_ROOT, "spec", "STATE_MODEL.md"), "utf8");
   assert.ok(
-    stateModel.includes("Unknown\nKnown\nImplemented\nVerified"),
+    readNormalized("spec", "STATE_MODEL.md").includes("Unknown\nKnown\nImplemented\nVerified"),
     "STATE_MODEL.md must contain the canonical four-state block",
   );
 });
