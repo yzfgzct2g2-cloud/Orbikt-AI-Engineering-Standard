@@ -5,7 +5,7 @@
 | Identifier | OAES-V2-HANDOFF |
 | Title | Cross-Session Handoff |
 | Type | Registry Document |
-| Version | 2.0.0 |
+| Version | 2.0.1 |
 | Status | Active |
 | Authority | Current (OAES v2) |
 | Author | OAES Standards Committee |
@@ -35,8 +35,9 @@ points here). No conversation history is required or assumed.
 
 - Any Kernel change or additional canonical State ([spec/KERNEL.md](spec/KERNEL.md) is frozen).
 - Deleting existing work, rewriting git history, force-pushes, or destructive commands.
-- Moving an existing release tag.
-- Merging `feat/oaes-v2-reference-runtime` into `main` (reserved to the owner).
+- Moving an existing release tag (`v2.0.0` stays on `1cf51e7` permanently).
+- Deleting the merged `feat/oaes-v2-reference-runtime` branch (retained for
+  historical clarity; removal is an owner decision).
 - Publishing anything that could contain secrets or personal data.
 
 Routine implementation decisions inside the frozen specification do **not** require
@@ -57,3 +58,4 @@ approval; continue autonomously and checkpoint.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 2.0.0 | 2026-07-18 | OAES Standards Committee | Initial handoff protocol. |
+| 2.0.1 | 2026-07-18 | OAES Standards Committee | Post-promotion update: merge to `main` completed (owner-authorized, merge `349a9a0`); boundaries updated accordingly. |
