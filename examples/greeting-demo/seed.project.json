@@ -1,0 +1,57 @@
+{
+  "format": "oaes-project",
+  "format_version": "2.0.0",
+  "objective": {
+    "id": "obj-greeting",
+    "title": "Create a locally stored greeting artifact and verify its content",
+    "description": "Synthetic demonstration objective for the OAES v2 reference runtime. It exists solely to prove Objective completion through deterministic Action selection, the four Knowledge States, dependency ordering, persistence, and resumption.",
+    "success_criteria": [
+      {
+        "id": "sc-content",
+        "description": "The greeting content requirement is Verified.",
+        "knowledge": "k-greeting-content"
+      },
+      {
+        "id": "sc-artifact",
+        "description": "The greeting artifact exists on disk with the required content and is Verified.",
+        "knowledge": "k-greeting-artifact"
+      }
+    ]
+  },
+  "actors": [
+    {
+      "id": "actor-runtime",
+      "type": "Automation",
+      "name": "OAES reference runtime"
+    }
+  ],
+  "knowledge": [
+    {
+      "id": "k-greeting-content",
+      "type": "requirement",
+      "content": "The greeting artifact must contain exactly: Hello, OAES!",
+      "state": "Unknown",
+      "parent": null,
+      "depends_on": [],
+      "source": "examples/greeting-demo/seed.project.json",
+      "updated_at": "2026-07-18T00:00:00.000Z",
+      "requires_implementation": false
+    },
+    {
+      "id": "k-greeting-artifact",
+      "type": "implementation",
+      "content": "A file greeting.txt exists in the demo working directory and its content matches the requirement k-greeting-content.",
+      "state": "Unknown",
+      "parent": null,
+      "depends_on": ["k-greeting-content"],
+      "source": "examples/greeting-demo/seed.project.json",
+      "updated_at": "2026-07-18T00:00:00.000Z",
+      "requires_implementation": true
+    }
+  ],
+  "actions": [],
+  "checkpoint": {
+    "pending_action": null,
+    "updated_at": "2026-07-18T00:00:00.000Z"
+  }
+}

@@ -5,82 +5,74 @@
 | Identifier | OAES-README |
 | Title | Repository Overview |
 | Type | Registry Document |
-| Version | 1.1.0 |
+| Version | 2.0.0 |
 | Status | Active |
+| Authority | Current (OAES v2) |
 | Author | OAES Standards Committee |
-| Approved | 2026-07-07 |
+| Approved | 2026-07-18 |
 
-## Purpose
+## What OAES Is
 
-This repository contains the **Orbikt AI Engineering Standard (OAES)**: a vendor-neutral,
-model-neutral, language-neutral engineering standard for AI-assisted software engineering.
+**OAES is a minimal engineering reasoning model that continuously transforms knowledge
+into verified outcomes through observable actions.**
 
-OAES defines *how engineering work is organized, recorded, verified, and evolved* when
-automated agents participate in it. It deliberately defines **no** domain knowledge, no
-programming-language guidance, no framework guidance, and no instructions for any specific
-AI model or vendor. Those concerns belong to downstream projects that adopt this standard.
+**OAES 是一個最小化的工程推理模型，透過可觀察的行動，持續將知識轉化為可驗證的成果。**
 
-The standard is designed to remain valid across changes of AI models, programming languages,
-frameworks, vendors, operating systems, and application domains, with a design horizon of at
-least ten years.
+The current authoritative definition is **OAES v2**: a frozen Kernel of exactly five
+concepts — Objective, Knowledge, State, Action, Actor — four canonical Knowledge
+States (Unknown, Known, Implemented, Verified), a deterministic reference runtime,
+and a repository-persisted continuation contract. AI systems, humans, scripts, CI,
+and external systems are all Actors.
 
-## Scope
-
-- The complete OAES Foundation, edition 1.0: constitution, specifications, templates,
-  governance, and supporting documentation.
-
-## Non-Scope
-
-- Domain knowledge of any kind (medical, legal, financial, or otherwise).
-- Technology-specific guidance (languages, frameworks, platforms, models, vendors).
-- Executable tooling. Tool *requirements* are specified in [64-tools](64-tools/README.md);
-  implementations live in adopter-controlled repositories.
+OAES is not an AI product, a prompt framework, an agent marketplace, a workflow
+builder, a chatbot personality, a model-provider abstraction product, or a project
+management suite.
 
 ## How to Read This Repository
 
-1. Start with the [Constitution](00-constitution/constitution.md) — the supreme document.
-   Everything else derives its authority from it. Its companion in intent is the
-   [North Star](01-meta/north-star.md) — the test every future idea must pass.
-2. Read the [Architecture Specification](02-architecture/architecture-specification.md) —
-   it explains the layer model and the dependency rules between layers.
-3. Use the [Document Index](INDEX.md) — the complete registry of every document, its
-   identifier, version, and location.
-4. For a guided path by role (adopter, maintainer, contributor), read the
-   [Reading Guide](70-documentation/reading-guide.md).
+1. **Specification (authoritative):** [spec/](spec/README.md) — Kernel, canonical
+   data model, State model, Runtime, vocabulary.
+2. **Continuing work here (human or AI):** [BOOTSTRAP.md](BOOTSTRAP.md) — the single
+   canonical boot protocol; then [CURRENT_STATE.md](CURRENT_STATE.md) and
+   [HANDOFF.md](HANDOFF.md).
+3. **Machine-readable project state:**
+   [`runtime-state/project.json`](runtime-state/project.json) (validated by
+   [schemas/](schemas/)).
+4. **Reference implementation:** [reference-runtime/](reference-runtime/README.md) —
+   deterministic, provider-independent, fully tested; synthetic demo in
+   [examples/greeting-demo/](examples/greeting-demo/README.md).
+5. **Why v2 is shaped this way:** decision records
+   [OAES-DEC-011…017](50-governance/decisions/).
 
-## Layer Map
+## Repository Map
 
-| Band | Layers | Concern |
+| Path | Authority | Contents |
 | --- | --- | --- |
-| 0x — Normative Core | [00-constitution](00-constitution/README.md), [01-meta](01-meta/README.md), [02-architecture](02-architecture/README.md) | Supreme principles; rules for documents; rules for structure |
-| 1x — Operating Model | [10-organization](10-organization/README.md), [11-capabilities](11-capabilities/README.md), [12-workflow](12-workflow/README.md), [13-enterprise](13-enterprise/README.md) | Who works, what can act, how work flows, how the whole organization operates |
-| 2x — Information | [20-knowledge](20-knowledge/README.md), [21-memory](21-memory/README.md), [22-context](22-context/README.md) | Curated truth; recorded state; assembled working sets |
-| 3x — Delivery | [30-projects](30-projects/README.md), [31-discovery](31-discovery/README.md), [32-adapters](32-adapters/README.md) | How projects begin, run, and bind to their domains |
-| 4x — Assurance | [40-quality](40-quality/README.md), [41-performance](41-performance/README.md), [42-privacy](42-privacy/README.md), [43-security](43-security/README.md) | Verification of work and protection of people and systems |
-| 5x — Stewardship | [50-governance](50-governance/README.md), [51-evolution](51-evolution/README.md) | Decision authority; controlled change of the standard |
-| 6x — Enablement | [60-templates](60-templates/README.md), [61-examples](61-examples/README.md), [62-generators](62-generators/README.md), [63-validators](63-validators/README.md), [64-tools](64-tools/README.md) | Reusable implementations of the normative layers |
-| 7x — Documentation | [70-documentation](70-documentation/README.md), [71-reference](71-reference/README.md) | Guides, glossary, external references |
-| 9x — Terminal | [90-archive](90-archive/README.md) | Retired material; nothing is ever deleted |
+| [spec/](spec/README.md) | **Current** | The frozen OAES v2 specification. |
+| [schemas/](schemas/) | **Current** | JSON Schemas — the validation contract. |
+| [reference-runtime/](reference-runtime/README.md) | **Current** | Deterministic TypeScript reference runtime and tests. |
+| [runtime-state/](runtime-state/project.json) | **Current** | Machine-readable project state (authoritative for the Runtime). |
+| [examples/](examples/greeting-demo/README.md) | **Current** | Synthetic demonstration. |
+| [BOOTSTRAP.md](BOOTSTRAP.md), [CLAUDE.md](CLAUDE.md), [AGENTS.md](AGENTS.md), [CURRENT_STATE.md](CURRENT_STATE.md), [HANDOFF.md](HANDOFF.md) | **Current** | Continuation contract. |
+| [VERSION.md](VERSION.md), [CHANGELOG.md](CHANGELOG.md) | **Current** | Version and edition records. |
+| [history/](history/README.md) | Index | Guide to the historical v1 lineage. |
+| `00-…` – `90-…` numbered layers, [INDEX.md](INDEX.md), [CONTRIBUTING.md](CONTRIBUTING.md) | **Historical (v1)** | Foundation editions 1.0–1.2, preserved in place unmodified ([OAES-DEC-017](50-governance/decisions/dec-017-v1-lineage-preservation.md)). Exception: [50-governance/decisions/](50-governance/decisions/) remains the live decision register. |
 
-## Dependencies
+## Historical Lineage
 
-- None. This is the repository entry point.
+OAES v1 — the Foundation editions 1.0, 1.1, and 1.2 (a vendor-neutral documentation
+standard: constitution, 24 layers, 32 specifications) — is preserved **in place,
+unmodified**, as engineering evidence. It is not current authority. Start at
+[history/README.md](history/README.md) for the lineage index and the v1 → v2
+transition narrative.
 
-## Interfaces
+## Validation
 
-- **Inbound:** first document read by any human or agent entering the repository.
-- **Outbound:** links to the Constitution, the Architecture Specification, and the Index.
-
-## Future Extension
-
-- New bands and layers are added only through the change process defined in the
-  [Evolution Specification](51-evolution/evolution-specification.md).
-
-## Related Documents
-
-- [INDEX.md](INDEX.md) — complete document registry
-- [CONTRIBUTING.md](CONTRIBUTING.md) — how to propose changes
-- [CHANGELOG.md](CHANGELOG.md) — edition history
+```bash
+cd reference-runtime
+npm install
+npm run check:all   # typecheck + tests (incl. kernel/state invariant guards) + docs scan
+```
 
 ## Revision History
 
@@ -88,3 +80,4 @@ least ten years.
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
 | 1.1.0 | 2026-07-08 | OAES Standards Committee | Added layers 13, 31, 32 and the North Star to the maps (Foundation edition 1.1). |
+| 2.0.0 | 2026-07-18 | OAES Standards Committee | OAES v2: repository entry point now presents the v2 specification as current; Foundation 1.x preserved as historical lineage (OAES-DEC-017). |

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://oaes.dev/schemas/actor.schema.json",
+  "title": "OAES v2 Actor",
+  "type": "object",
+  "required": ["id", "type", "name"],
+  "additionalProperties": true,
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "type": { "enum": ["Human", "AI", "Automation", "External System"] },
+    "name": { "type": "string", "minLength": 1 }
+  }
+}
