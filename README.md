@@ -5,11 +5,11 @@
 | Identifier | OAES-README |
 | Title | Repository Overview |
 | Type | Registry Document |
-| Version | 2.0.0 |
+| Version | 2.1.0 |
 | Status | Active |
 | Authority | Current (OAES v2) |
 | Author | OAES Standards Committee |
-| Approved | 2026-07-18 |
+| Approved | 2026-07-24 |
 
 ## What OAES Is
 
@@ -33,8 +33,9 @@ management suite.
 1. **Specification (authoritative):** [spec/](spec/README.md) — Kernel, canonical
    data model, State model, Runtime, vocabulary.
 2. **Continuing work here (human or AI):** [BOOTSTRAP.md](BOOTSTRAP.md) — the single
-   canonical boot protocol; then [CURRENT_STATE.md](CURRENT_STATE.md) and
-   [HANDOFF.md](HANDOFF.md).
+   canonical boot protocol; then [CURRENT_STATE.md](CURRENT_STATE.md), the sole
+   routine Continue Card. Read [HANDOFF.md](HANDOFF.md) only when the Continue Card
+   or an approval boundary requires it.
 3. **Machine-readable project state:**
    [`runtime-state/project.json`](runtime-state/project.json) (validated by
    [schemas/](schemas/)).
@@ -42,7 +43,7 @@ management suite.
    deterministic, provider-independent, fully tested; synthetic demo in
    [examples/greeting-demo/](examples/greeting-demo/README.md).
 5. **Why v2 is shaped this way:** decision records
-   [OAES-DEC-011…017](50-governance/decisions/).
+   [OAES-DEC-011…018](50-governance/decisions/).
 
 ## Repository Map
 
@@ -81,3 +82,4 @@ npm run check:all   # typecheck + tests (incl. kernel/state invariant guards) + 
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
 | 1.1.0 | 2026-07-08 | OAES Standards Committee | Added layers 13, 31, 32 and the North Star to the maps (Foundation edition 1.1). |
 | 2.0.0 | 2026-07-18 | OAES Standards Committee | OAES v2: repository entry point now presents the v2 specification as current; Foundation 1.x preserved as historical lineage (OAES-DEC-017). |
+| 2.1.0 | 2026-07-24 | OAES Standards Committee | Established CURRENT_STATE.md as the sole routine Continue Card and made HANDOFF.md conditional (OAES-DEC-018). |

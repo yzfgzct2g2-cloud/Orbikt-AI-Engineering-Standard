@@ -3,59 +3,67 @@
 | Field | Value |
 | --- | --- |
 | Identifier | OAES-V2-HANDOFF |
-| Title | Cross-Session Handoff |
+| Title | Conditional Cross-Session Handoff Governance |
 | Type | Registry Document |
-| Version | 2.0.1 |
+| Version | 2.1.0 |
 | Status | Active |
 | Authority | Current (OAES v2) |
 | Author | OAES Standards Committee |
-| Approved | 2026-07-18 |
+| Approved | 2026-07-24 |
 
-Every implementation session — human or AI — begins here (or via an adapter that
-points here). No conversation history is required or assumed.
+HANDOFF.md is not a routine status view. Routine continuation uses
+[BOOTSTRAP.md](BOOTSTRAP.md) and the bounded
+[CURRENT_STATE.md](CURRENT_STATE.md) Continue Card. Read this file only when a Guard
+Rail, approval boundary, exceptional recovery condition, or human decision requires
+detailed context.
 
-## How to Continue
+## Approval Boundaries
 
-1. Follow the canonical boot protocol: [BOOTSTRAP.md](BOOTSTRAP.md).
-2. Read [CURRENT_STATE.md](CURRENT_STATE.md) and
-   [`runtime-state/project.json`](runtime-state/project.json) for the exact position.
-3. Validate before and after any change:
+Stop and ask the repository owner before:
 
-   ```bash
-   cd reference-runtime
-   npm install
-   npm run check:all   # typecheck + tests + docs consistency scan
-   ```
+- changing the frozen Kernel or adding a canonical State;
+- deleting work, rewriting Git history, force-pushing, or using destructive commands;
+- moving an existing release tag;
+- deleting a retained historical branch;
+- publishing secrets, credentials, personal data, or unsafe artifacts;
+- pushing incomplete work to a protected or production branch;
+- resolving an authority contradiction that repository evidence does not settle.
 
-4. At every checkpoint: update `runtime-state/project.json`, CURRENT_STATE.md, and
-   this file; run validation; make a focused conventional commit; push; verify
-   local/remote alignment (`git status`, `git log -1 --oneline`, `git branch -vv`).
+Routine implementation inside the frozen specification may continue autonomously
+when the Continue Card authorizes it.
 
-## Approval Boundaries (stop and ask the repository owner)
+## Exceptional Continuation
 
-- Any Kernel change or additional canonical State ([spec/KERNEL.md](spec/KERNEL.md) is frozen).
-- Deleting existing work, rewriting git history, force-pushes, or destructive commands.
-- Moving an existing release tag (`v2.0.0` stays on `1cf51e7` permanently).
-- Deleting the merged `feat/oaes-v2-reference-runtime` branch (retained for
-  historical clarity; removal is an owner decision).
-- Publishing anything that could contain secrets or personal data.
+- Wrong remote or branch, unexpected local changes, or ahead/behind/divergent history
+  stops ordinary continuation. Preserve the working copy and report the evidence.
+- Safe incomplete work may be checkpointed only on an approved non-production feature
+  branch under [OAES-DEC-018](50-governance/decisions/dec-018-minimum-continue-card-contract.md).
+- Unsafe-to-commit work remains local: do not commit, push, reset, clean, stash,
+  rebase, or overwrite it. Report that cross-computer recovery is unavailable until
+  a safe preservation path is approved.
+- No Blind Retry and failure classification are normative in OAES-DEC-018.
 
-Routine implementation decisions inside the frozen specification do **not** require
-approval; continue autonomously and checkpoint.
+## Update Rule
+
+Update this file only when its approval boundaries, exceptional handoff information,
+human decisions, or governance subject changes. Do not duplicate routine Objective,
+Current, Next, validation, branch, commit, or remote-synchronization status here.
 
 ## Working Agreements
 
-- Specification governs implementation ([OAES-DEC-014](50-governance/decisions/dec-014-specification-first-authority.md)).
-- The v1 lineage (numbered layer directories) is historical evidence — never edit it
-  to make checks pass ([OAES-DEC-017](50-governance/decisions/dec-017-v1-lineage-preservation.md)).
-- Machine-readable state is authoritative; markdown projections are synchronized at
-  checkpoints ([OAES-DEC-016](50-governance/decisions/dec-016-repository-persisted-continuation.md)).
+- Machine-readable Runtime state remains authoritative in
+  [`runtime-state/project.json`](runtime-state/project.json).
+- CURRENT_STATE is the sole routine human-readable continuation projection.
+- Confirmed pushed GitHub history is the shared location-independent repository SSOT;
+  local working copies may contain newer work and must never be discarded
+  automatically.
 - Conventional commits; never commit `node_modules/`, `dist/`, `.demo/`, `.env`, or
-  any credential.
+  credentials.
 
 ## Revision History
 
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 2.0.0 | 2026-07-18 | OAES Standards Committee | Initial handoff protocol. |
-| 2.0.1 | 2026-07-18 | OAES Standards Committee | Post-promotion update: merge to `main` completed (owner-authorized, merge `349a9a0`); boundaries updated accordingly. |
+| 2.0.1 | 2026-07-18 | OAES Standards Committee | Recorded owner-authorized promotion to main. |
+| 2.1.0 | 2026-07-24 | OAES Standards Committee | Removed routine status duplication and retained conditional governance only. |

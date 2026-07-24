@@ -2,29 +2,14 @@
   "format": "oaes-project",
   "format_version": "2.0.0",
   "objective": {
-    "id": "obj-oaes-v2",
-    "title": "OAES v2: frozen specification, reference runtime, and continuation contract",
-    "description": "Evolve this repository into the implementation-ready OAES v2 standard while preserving the complete OAES v1 (Foundation 1.0-1.2) lineage: frozen five-concept Kernel, canonical data model, deterministic reference runtime, persistent machine-readable project state, and cross-session continuation.",
+    "id": "obj-implement-current-state-continue-card",
+    "title": "Implement CURRENT_STATE as the minimum Continue Card",
+    "description": "Make CURRENT_STATE the sole bounded routine continuation view while preserving project JSON as Runtime authority, live Git as repository authority, and all frozen OAES v2 models.",
     "success_criteria": [
       {
-        "id": "sc-spec",
-        "description": "The frozen OAES v2 specification (spec/) is complete and passes the documentation consistency scan.",
-        "knowledge": "k-v2-spec"
-      },
-      {
-        "id": "sc-runtime",
-        "description": "The deterministic reference runtime passes typecheck, all tests (including kernel/state invariant guards and interruption/resumption), and the synthetic demo.",
-        "knowledge": "k-reference-runtime"
-      },
-      {
-        "id": "sc-continuation",
-        "description": "Any future Actor can continue solely from repository files: BOOTSTRAP.md, adapters, CURRENT_STATE.md, HANDOFF.md, and runtime-state/project.json exist and agree.",
-        "knowledge": "k-continuation-contract"
-      },
-      {
-        "id": "sc-release",
-        "description": "Release validation: all checks pass, README/CHANGELOG present v2 as current with v1 preserved, the branch is pushed and aligned with the remote, and the v2.0.0 tag exists.",
-        "knowledge": "k-release-validation"
+        "id": "sc-continue-card",
+        "description": "A new Actor can verify Git, read CURRENT_STATE as one bounded six-field Continue Card, identify exactly one Next action, and continue without routine loading of other OAES authority.",
+        "knowledge": "k-continue-card-contract"
       }
     ]
   },
@@ -38,6 +23,11 @@
       "id": "actor-claude-code",
       "type": "AI",
       "name": "Claude Code implementation session"
+    },
+    {
+      "id": "actor-codex",
+      "type": "AI",
+      "name": "Codex implementation session"
     }
   ],
   "knowledge": [
@@ -83,6 +73,17 @@
       "depends_on": ["k-v2-spec", "k-reference-runtime", "k-continuation-contract"],
       "source": "runtime-state/project.json",
       "updated_at": "2026-07-18T14:20:00.000Z",
+      "requires_implementation": true
+    },
+    {
+      "id": "k-continue-card-contract",
+      "type": "implementation",
+      "content": "CURRENT_STATE is the sole bounded routine Continue Card with Objective, Current, Next, Blocker, Repository, and Guard Rails; BOOTSTRAP requires Git verification then this one status view; HANDOFF is conditional; OAES-DEC-018 defines GitHub continuity, safe interruption, and No Blind Retry.",
+      "state": "Verified",
+      "parent": null,
+      "depends_on": ["k-continuation-contract"],
+      "source": "50-governance/decisions/dec-018-minimum-continue-card-contract.md",
+      "updated_at": "2026-07-24T13:26:45.686Z",
       "requires_implementation": true
     }
   ],
@@ -194,10 +195,37 @@
       "created_at": "2026-07-18T14:20:00.000Z",
       "kind": "verify",
       "resulting_state": "Verified"
+    },
+    {
+      "id": "a-013",
+      "actor": "actor-codex",
+      "target_knowledge": ["k-continue-card-contract"],
+      "description": "establish k-continue-card-contract (Unknown -> Known): fixed CURRENT_STATE as the approved six-field carrier and selected a superseding decision for traceable authority",
+      "created_at": "2026-07-24T13:26:43.686Z",
+      "kind": "establish",
+      "resulting_state": "Known"
+    },
+    {
+      "id": "a-014",
+      "actor": "actor-codex",
+      "target_knowledge": ["k-continue-card-contract"],
+      "description": "implement k-continue-card-contract (Known -> Implemented): reshaped continuation documents, added OAES-DEC-018, and added deterministic documentation guards",
+      "created_at": "2026-07-24T13:26:44.686Z",
+      "kind": "implement",
+      "resulting_state": "Implemented"
+    },
+    {
+      "id": "a-015",
+      "actor": "actor-codex",
+      "target_knowledge": ["k-continue-card-contract"],
+      "description": "verify k-continue-card-contract (Implemented -> Verified): CURRENT_STATE exposes one Objective and one Next action; continuation authority and validator agree",
+      "created_at": "2026-07-24T13:26:45.686Z",
+      "kind": "verify",
+      "resulting_state": "Verified"
     }
   ],
   "checkpoint": {
     "pending_action": null,
-    "updated_at": "2026-07-18T14:20:00.000Z"
+    "updated_at": "2026-07-24T13:26:45.686Z"
   }
 }

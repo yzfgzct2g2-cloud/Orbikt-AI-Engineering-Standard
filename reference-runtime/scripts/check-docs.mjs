@@ -18,6 +18,7 @@
  *      divergent canonical definitions; BOOTSTRAP.md references the state files;
  *   8. no v2 authority doc presents "Decision" (or similar labels) as a State;
  *   9. runtime-state/project.json is structurally sound (format markers, states).
+ *  10. the minimum Continue Card contract is present and internally aligned.
  */
 
 import { existsSync, readFileSync, readdirSync } from "node:fs";
@@ -55,6 +56,7 @@ const REQUIRED_FILES = [
   "reference-runtime/README.md",
   "examples/greeting-demo/README.md",
   "examples/greeting-demo/seed.project.json",
+  "50-governance/decisions/dec-018-minimum-continue-card-contract.md",
 ];
 
 /** v2 current-authority markdown documents (the scan scope). */
@@ -206,6 +208,118 @@ for (const adapter of ["CLAUDE.md", "AGENTS.md"]) {
     if (!ACTOR_TYPES.includes(a.type)) {
       errors.push(`runtime-state/project.json: ${a.id} has non-canonical actor type ${a.type}`);
     }
+  }
+}
+
+// 10. Minimum Continue Card contract
+{
+  const currentState = read("CURRENT_STATE.md");
+  const requiredSections = [
+    "Objective",
+    "Current",
+    "Next",
+    "Blocker",
+    "Repository",
+    "Guard Rails",
+  ];
+  const sectionHeadings = [...currentState.matchAll(/^## (.+)$/gm)].map((match) => match[1]);
+  for (const section of requiredSections) {
+    const count = sectionHeadings.filter((heading) => heading === section).length;
+    if (count !== 1) {
+      errors.push(`CURRENT_STATE.md: must contain exactly one "## ${section}" section`);
+    }
+  }
+  if (sectionHeadings.length !== requiredSections.length) {
+    errors.push("CURRENT_STATE.md: routine Continue Card must contain only the six approved sections");
+  }
+
+  const sectionBody = (heading) => {
+    const marker = `## ${heading}\n`;
+    const start = currentState.indexOf(marker);
+    if (start === -1) return "";
+    const remainder = currentState.slice(start + marker.length);
+    const nextHeading = remainder.search(/^## /m);
+    return nextHeading === -1 ? remainder : remainder.slice(0, nextHeading);
+  };
+  const objectiveIds = [...sectionBody("Objective").matchAll(/^- ID: `([^`]+)`$/gm)];
+  if (objectiveIds.length !== 1) {
+    errors.push("CURRENT_STATE.md: must expose exactly one Objective ID");
+  }
+  const nextActions = [...sectionBody("Next").matchAll(/^- Action: (.+)$/gm)];
+  if (nextActions.length !== 1) {
+    errors.push("CURRENT_STATE.md: must expose exactly one Next action");
+  }
+  const forbiddenRoutineSections = ["Roadmap", "Backlog", "History", "Architecture Summary", "Optional Next"];
+  for (const section of forbiddenRoutineSections) {
+    if (sectionHeadings.includes(section)) {
+      errors.push(`CURRENT_STATE.md: routine Continue Card must not contain a "${section}" section`);
+    }
+  }
+  if (!currentState.includes("https://github.com/yzfgzct2g2-cloud/Orbikt-AI-Engineering-Standard.git")) {
+    errors.push("CURRENT_STATE.md: expected GitHub repository URL missing");
+  }
+  if (!currentState.includes("- Expected branch: `main`")) {
+    errors.push("CURRENT_STATE.md: expected branch missing");
+  }
+  if (!/No Blind Retry/i.test(currentState)) {
+    errors.push("CURRENT_STATE.md: No Blind Retry rule or reference missing");
+  }
+
+  const readme = read("README.md");
+  if (!readme.includes("sole routine Continue Card")) {
+    errors.push("README.md: must identify CURRENT_STATE.md as the sole routine Continue Card");
+  }
+  if (/\[CURRENT_STATE\.md\]\(CURRENT_STATE\.md\) and\s+\[HANDOFF\.md\]\(HANDOFF\.md\)/s.test(readme)) {
+    errors.push("README.md: must not require HANDOFF.md for routine continuation");
+  }
+  if (!readme.includes("OAES-DEC-011…018")) {
+    errors.push("README.md: current decision range must include OAES-DEC-018");
+  }
+
+  const project = JSON.parse(read("runtime-state/project.json"));
+  if (objectiveIds.length === 1 && objectiveIds[0][1] !== project.objective?.id) {
+    errors.push("CURRENT_STATE.md: Objective ID diverges from runtime-state/project.json");
+  }
+
+  const boot = read("BOOTSTRAP.md");
+  if (!boot.includes("Ordinary continuation reads only CURRENT_STATE.md after Git verification.")) {
+    errors.push("BOOTSTRAP.md: routine startup must point to CURRENT_STATE.md as the sole status view");
+  }
+  if (!boot.includes("Conditional authority reading")) {
+    errors.push("BOOTSTRAP.md: conditional authority rule missing");
+  }
+
+  const handoff = read("HANDOFF.md");
+  if (!handoff.includes("HANDOFF.md is not a routine status view.")) {
+    errors.push("HANDOFF.md: must declare its conditional role");
+  }
+  if (!handoff.includes("Update this file only when")) {
+    errors.push("HANDOFF.md: conditional update rule missing");
+  }
+  if (/At every checkpoint:[\s\S]{0,200}HANDOFF\.md/i.test(handoff)) {
+    errors.push("HANDOFF.md: still requires routine checkpoint duplication");
+  }
+
+  const decisionPath = "50-governance/decisions/dec-018-minimum-continue-card-contract.md";
+  if (existsSync(join(ROOT, decisionPath))) {
+    const decision = read(decisionPath);
+    for (const required of [
+      "Supersedes OAES-DEC-016",
+      "zero retries without new evidence",
+      "one evidence-backed retry",
+      "approved non-production feature branch",
+    ]) {
+      if (!decision.includes(required)) {
+        errors.push(`${decisionPath}: required contract language missing -> ${required}`);
+      }
+    }
+  }
+  const priorDecision = read("50-governance/decisions/dec-016-repository-persisted-continuation.md");
+  if (!priorDecision.includes("| Status | Superseded |")) {
+    errors.push("OAES-DEC-016: must be marked Superseded");
+  }
+  if (!priorDecision.includes("| Superseded by | [OAES-DEC-018]")) {
+    errors.push("OAES-DEC-016: superseding decision link missing");
   }
 }
 

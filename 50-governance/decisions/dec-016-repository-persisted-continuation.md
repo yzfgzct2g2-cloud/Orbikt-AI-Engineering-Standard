@@ -7,9 +7,10 @@
 | Layer | 50-governance |
 | Type | Decision Record |
 | Version | 1.0.0 |
-| Status | Accepted |
+| Status | Superseded |
 | Author | Repository owner mandate, recorded by OAES Standards Committee |
 | Approved | 2026-07-18 |
+| Superseded by | [OAES-DEC-018](dec-018-minimum-continue-card-contract.md) |
 
 ## Purpose
 
