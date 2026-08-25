@@ -6,7 +6,7 @@
 | Title | Security Specification |
 | Layer | 43-security |
 | Type | Specification |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active |
 | Author | OAES Standards Committee |
 | Approved | 2026-07-07 |
@@ -89,11 +89,54 @@ mode of over-trusted automation.
   per ORG-06; artifacts produced under a compromised agent, tool, or credential are
   quarantined from gates until re-verified.
 
+### Emergency access
+
+Emergency privileged access is the path taken when normal authentication is unavailable
+and the system must still be reachable. It is the highest-value credential a system
+holds, and the one most often left as a permanent shared password.
+
+- **SEC-12** A system requiring emergency privileged access MUST name a **System Owner**:
+  the human accountable for authorizing that access. System Owner is a *governance*
+  designation recorded in the role register (GOV-03), not a runtime role. It MUST NOT be
+  assumed identical to any application administrator role — the same human may hold both,
+  but a standard that conflates them cannot express least privilege at the boundary where
+  it matters most.
+- **SEC-13** Emergency access SHOULD NOT rely on a human-memorized, permanent, shared
+  password as its normal model. The preferred design is an **owner-controlled one-time
+  emergency credential**, authorized by the System Owner, which:
+  - is scoped to one environment and one stated purpose;
+  - is generated from a cryptographically secure random source;
+  - carries a short time-to-live and expires automatically if unused;
+  - is usable at most once and is invalidated atomically on successful use;
+  - is held server-side only as a verifier or hash where the architecture permits;
+  - is never placed in a URL or query string, never logged, never committed, and never
+    included in release evidence (SEC-04 applies without exception);
+  - never becomes a routine login method.
+- **SEC-14** Every emergency-credential lifecycle event MUST be auditable as
+  `BREAK_GLASS_CREATED`, `BREAK_GLASS_USED`, `BREAK_GLASS_EXPIRED`, or
+  `BREAK_GLASS_REVOKED`. Audit records carry classifications and metadata only — never
+  the credential, and never a value from which it could be recovered.
+- **SEC-15** Emergency access MUST be isolated per environment: staging emergency access
+  cannot authenticate production, and production emergency access cannot authenticate
+  staging. Secret material, issuance, audit, revocation, and scope are separate; a
+  break-glass credential is never reused across environments.
+- **SEC-16** A static shared emergency key is a **legacy interim** implementation of
+  SEC-13. It MAY remain where removing it would create operational risk, but it MUST NOT
+  be used for routine login, MUST remain high entropy, MUST be protected as a secret, and
+  MUST be rotated after any intentional human disclosure. Its migration to an
+  owner-controlled one-time credential is a recorded improvement item, planned as a
+  separate change rather than performed under release pressure.
+
 ## Validation
 
 - SEC-04 (secret scanning) and SEC-06 (history attribution) are deterministically
   checkable; SEC-01/SEC-02 access minimality and SEC-08 boundary discipline are
   conformance-review checks.
+- SEC-14 audit-event presence and SEC-15 environment separation are deterministically
+  checkable wherever emergency access exists; SEC-12 ownership, SEC-13 credential design,
+  and SEC-16 legacy classification are conformance-review checks. A system claiming no
+  emergency access satisfies SEC-12 to SEC-16 only if that claim is itself recorded — an
+  undocumented shared password is a SEC-13 defect, not an absence.
 
 ## Future Extension
 
@@ -111,3 +154,4 @@ mode of over-trusted automation.
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-07-07 | OAES Standards Committee | Initial release, Foundation edition 1.0. |
+| 1.1.0 | 2026-08-25 | Founding Maintainer (bootstrap, GOV-09) | Added the Emergency access requirements SEC-12 to SEC-16 (owner-controlled one-time break glass, System Owner designation, lifecycle audit, environment isolation, legacy static-key classification) per [OAES-DEC-019](../50-governance/decisions/dec-019-owner-controlled-break-glass.md). Analysis prepared by an agent; decided by a human per GOV-05. |
