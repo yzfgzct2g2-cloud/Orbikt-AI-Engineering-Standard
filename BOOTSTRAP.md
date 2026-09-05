@@ -33,6 +33,18 @@ history is required.
 
 Ordinary continuation reads only CURRENT_STATE.md after Git verification.
 
+## Explicit engineering Mission
+
+For an explicit Mission, verify repository identity and existing work before any
+write, then read the [OAES Autonomous Execution Profile](AUTONOMOUS_EXECUTION_PROFILE.md)
+and applicable Project Overlay. This conditional route is adopted by
+[OAES-DEC-020](50-governance/decisions/dec-020-autonomous-execution-profile.md).
+The Mission defines the bounded assignment and may authorize its isolated feature
+branch; unresolved governance conflicts still stop at a Human Gate. Routine
+`continue`, the sole Continue Card, frozen-model boundaries, and DEC-018 No Blind
+Retry remain unchanged. Explicit-Mission local checkpoints do not imply push/PR
+permission or remote confirmation.
+
 ## Conditional authority reading
 
 Read additional authority only when:

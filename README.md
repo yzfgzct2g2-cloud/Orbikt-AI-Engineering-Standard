@@ -43,7 +43,14 @@ management suite.
    deterministic, provider-independent, fully tested; synthetic demo in
    [examples/greeting-demo/](examples/greeting-demo/README.md).
 5. **Why v2 is shaped this way:** decision records
-   [OAES-DEC-011…018](50-governance/decisions/).
+   [OAES-DEC-011…018](50-governance/decisions/), followed by
+   [OAES-DEC-019](50-governance/decisions/dec-019-owner-controlled-break-glass.md)
+   (owner-controlled emergency access) and
+   [OAES-DEC-020](50-governance/decisions/dec-020-autonomous-execution-profile.md).
+6. **Explicit engineering Missions:** the
+   [OAES Autonomous Execution Profile](AUTONOMOUS_EXECUTION_PROFILE.md), adopted in
+   [OAES-DEC-020](50-governance/decisions/dec-020-autonomous-execution-profile.md),
+   defines autonomy levels, Human Gates, self-repair, and a minimal QA-Engine Overlay.
 
 ## Repository Map
 
